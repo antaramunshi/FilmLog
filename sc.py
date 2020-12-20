@@ -36,22 +36,22 @@ sb1.grid(row=2,column=4)
 list1.configure(yscrollcommand=sb1.set)
 sb1.configure(command=list1.yview)
 
-b1=Button(window,text="View All")
+b1=Button(window,text="View All",width=12)
 b1.grid(row=2,column=5)
 
-b2=Button(window,text="Search a Film")
+b2=Button(window,text="Search a Film",width=12)
 b2.grid(row=3,column=5)
 
-b3=Button(window,text="Add a Film")
+b3=Button(window,text="Add a Film",width=12)
 b3.grid(row=4,column=5)
 
-b4=Button(window,text="Update Selected")
+b4=Button(window,text="Update Selected",width=12)
 b4.grid(row=5,column=5)
 
-b5=Button(window,text="Delete Selected")
+b5=Button(window,text="Delete Selected",width=12)
 b5.grid(row=6,column=5)
 
-b6=Button(window,text="Close")
+b6=Button(window,text="Close",width=12)
 b6.grid(row=7,column=5)
 
 window.mainloop()
