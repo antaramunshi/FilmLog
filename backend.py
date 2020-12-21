@@ -33,14 +33,14 @@ def search(title="",year="",director="",genre=""):
 def delete(id):
     conn=sqlite3.connect("films.db")
     cur=conn.cursor()
-    cur.execute("DELETE FROM film WHERE id=?",(id))
+    cur.execute("DELETE FROM film WHERE id=?",(id,))
     conn.commit()
     conn.close()
 
-def update(id,title,year,director,genre):
+def update(id,title,year,director,genre,review):
     conn=sqlite3.connect("films.db")
     cur=conn.cursor()
-    cur.execute("UPDATE ",(id))
+    cur.execute("UPDATE film SET title=?,year=?,director=?,genre=?,review=? WHERE id=?",(id,title,year,director,genre))
     conn.commit()
     conn.close()
 
