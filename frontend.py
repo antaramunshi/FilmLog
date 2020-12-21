@@ -1,4 +1,5 @@
 from tkinter import *
+import backend
 window = Tk()
 
 l1=Label(window,text="Title")
@@ -44,22 +45,22 @@ sb1.grid(row=2,column=4)
 list1.configure(yscrollcommand=sb1.set)
 sb1.configure(command=list1.yview)
 
-b1=Button(window,text="View All",width=12,bg='#856ff8')
+b1=Button(window,text="View All",width=12,bg='grey')
 b1.grid(row=2,column=5)
 
-b2=Button(window,text="Search a Film",width=12,bg='#856ff8')
+b2=Button(window,text="Search a Film",width=12,bg='grey')
 b2.grid(row=3,column=5)
 
-b3=Button(window,text="Add a Film",width=12,bg='#856ff8')
+b3=Button(window,text="Add a Film",width=12,bg='grey')
 b3.grid(row=4,column=5)
 
-b4=Button(window,text="Update Selected",width=12,bg='#856ff8')
+b4=Button(window,text="Update Selected",width=12,bg='grey')
 b4.grid(row=5,column=5)
 
-b5=Button(window,text="Delete Selected",width=12,bg='#856ff8')
+b5=Button(window,text="Delete Selected",width=12,bg='grey')
 b5.grid(row=6,column=5)
 
-b6=Button(window,text="Close",width=12,bg='#856ff8')
+b6=Button(window,text="Close",width=12,bg='grey')
 b6.grid(row=7,column=5)
 
 window.mainloop()
