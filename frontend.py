@@ -1,5 +1,6 @@
 from tkinter import *
 import backend
+
 def get_selected_row(event):
     try:
         global selected_tuple
