@@ -1,6 +1,6 @@
 from tkinter import *
-from backend import Database
-database= Database()
+import backend
+
 def get_selected_row(event):
     try:
         global selected_tuple
@@ -22,7 +22,7 @@ def get_selected_row(event):
 
 def view_command():
     list1.delete(0,END)
-    for row in database.view():
+    for row in backend.view():
         list1.insert(END,row)
 
 def search_command():
