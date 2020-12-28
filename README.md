@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/Python_Version-3.7-brown.svg)
 ![](https://img.shields.io/badge/Status-Complete-blue.svg)
 
-## <p align="center">💻 Presenting My New Project FLIMLOG 💻</p>
+## <p align="center">💻 Presenting New Project FLIMLOG 💻</p>
 
 <p align="center"><img src="Images_for_README/modified_version2.png"></p>
 
