@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/Python_Version-3.7-brown.svg)
 ![](https://img.shields.io/badge/Status-Complete-blue.svg)
 
-## <p align="center"><img src="Images_For_README/heart.jpg" width="30px"> Presenting My New Project FLIMLOG <img src="Images_For_README/heart.jpg" width="30px"></p>
+## <p align="center">💻 Presenting My New Project FLIMLOG 💻</p>
 
 <p align="center"><img src="Images_for_README/modified_version2.png"></p>
 
@@ -22,4 +22,4 @@
 
 ---
 
-## <p align="center"> ***_Show <img src="Images_For_README/heart.jpg" width="25px"> By Starring My Repos_***</p> 
+## <p align="center"> ***_Support Me By Starring My Repos_***</p> 
