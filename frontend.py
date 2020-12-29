@@ -71,41 +71,41 @@ window.minsize(654,650)
 frame = Frame(window)
 frame.place(x=0,y=230)
 
-Label(window, text="FilmLog", font=("Arial", 20, "bold", "italic"), bg="#141414", fg="orange").place(x=250, y=7)
+Label(window, text="FilmLog", font=("Lato", 20, "bold"), bg="#141414", fg="orange").place(x=250, y=7)
 
-l1=Label(window,text="Title", font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l1=Label(window,text="Title", font=("Lato", 12, "bold"), fg="#00FF00", bg="#141414")
 l1.place(x=10,y=10+50)
 
-l2=Label(window,text="Year", font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l2=Label(window,text="Year", font=("Lato", 12, "bold"), fg="#00FF00", bg="#141414")
 l2.place(x=10,y=60+50)
 
-l3=Label(window,text="Director", font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l3=Label(window,text="Director", font=("Lato", 12, "bold"), fg="#00FF00", bg="#141414")
 l3.place(x=320,y=10+50)
 
-l4=Label(window,text="Review", font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l4=Label(window,text="Review", font=("Lato", 12, "bold"), fg="#00FF00", bg="#141414")
 l4.place(x=320, y=65+50)
 
-l5=Label(window,text='Genre', font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l5=Label(window,text='Genre', font=("Lato", 12, "bold"), fg="#00FF00", bg="#141414")
 l5.place(x=160, y=120+50)
 
 title_text= StringVar()
-e1=Entry(window,textvariable=title_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e1=Entry(window,textvariable=title_text, font=("Lato",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
 e1.place(x=60, y=10+50)
 
 year_text= StringVar()
-e2=Entry(window,textvariable=year_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e2=Entry(window,textvariable=year_text, font=("Lato",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
 e2.place(x=60,y=60+50)
 
 director_text= StringVar()
-e3=Entry(window,textvariable=director_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e3=Entry(window,textvariable=director_text, font=("Lato",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
 e3.place(x=320+80,y=10+50)
 
 review_text= StringVar()
-e4=Entry(window,textvariable=review_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e4=Entry(window,textvariable=review_text, font=("Lato",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
 e4.place(x=320+80, y=60+50)
 
 genre_text= StringVar()
-e5=Entry(window,textvariable=genre_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e5=Entry(window,textvariable=genre_text, font=("Lato",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
 e5.place(x=230, y=120+50)
 
 e1.focus()
@@ -120,22 +120,22 @@ sb1.configure(command=list1.yview)
 
 list1.bind('<<ListboxSelect>>',get_selected_row)
 
-b1=Button(window,text="View All", font=("Arial", 15, "bold"), width=12,bg='#262626',fg="orange",command=view_command)
+b1=Button(window,text="View All", font=("Lato", 15, "bold"), width=12,bg='#262626',fg="orange",command=view_command)
 b1.place(x=10, y=500)
 
-b2=Button(window,text="Search a Film", font=("Arial", 15, "bold"), width=12,bg='#262626',fg="orange",command=search_command)
+b2=Button(window,text="Search a Film", font=("Lato", 15, "bold"), width=12,bg='#262626',fg="orange",command=search_command)
 b2.place(x=10, y=580)
 
-b3=Button(window,text="Add a Film",font=("Arial", 15, "bold"), width=14, bg='#262626',fg="orange",command=add_command)
+b3=Button(window,text="Add a Film",font=("Lato", 15, "bold"), width=14, bg='#262626',fg="orange",command=add_command)
 b3.place(x=230, y=500)
 
-b4=Button(window,text="Update Selected",font=("Arial", 15, "bold"), bg='#262626',fg="orange",command=update_command)
+b4=Button(window,text="Update Selected",font=("Lato", 15, "bold"), bg='#262626',fg="orange",command=update_command)
 b4.place(x=233, y=580)
 
-b5=Button(window,text="Delete Selected",font=("Arial", 15, "bold"), bg='#262626',fg="orange",command=delete_command)
+b5=Button(window,text="Delete Selected",font=("Lato", 15, "bold"), bg='#262626',fg="orange",command=delete_command)
 b5.place(x=480, y=500)
 
-b6=Button(window,text="Close",font=("Arial", 15, "bold"), width=12, bg='#262626',fg="orange",command=close_command)
+b6=Button(window,text="Close",font=("Lato", 15, "bold"), width=12, bg='#262626',fg="orange",command=close_command)
 b6.place(x=485, y=580)
 
 window.mainloop()
