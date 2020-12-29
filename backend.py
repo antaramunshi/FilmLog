@@ -22,7 +22,7 @@ def view():
     conn.close()
     return rows
 
-def search(title="",year="",director="",genre=""):
+def search(title=None,year=None,director=None,genre=None):
     conn=sqlite3.connect("films.db")
     cur=conn.cursor()
     cur.execute("SELECT * FROM film WHERE title=? OR year=? OR director=? OR genre=?",(title,year,director,genre))
@@ -33,7 +33,7 @@ def search(title="",year="",director="",genre=""):
 def delete(id):
     conn=sqlite3.connect("films.db")
     cur=conn.cursor()
-    cur.execute("DELETE FROM film WHERE id=?",(id,))
+    cur.execute(f"DELETE FROM film WHERE id={id}")
     conn.commit()
     conn.close()
 

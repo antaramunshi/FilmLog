@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 import backend
 
 def get_selected_row(event):
@@ -21,24 +22,39 @@ def get_selected_row(event):
     
 
 def view_command():
-    list1.delete(0,END)
-    for row in backend.view():
-        list1.insert(END,row)
+    try:
+        list1.delete(0,END)
+        for row in backend.view():
+            list1.insert(END,row)
+    except:
+        messagebox.showerror("Error", "View Related Error Came")        
 
 def search_command():
-    list1.delete(0,END)
-    for row in backend.search(title_text.get(),director_text.get(),year_text.get(),genre_text.get()):
-        list1.insert(END,row)
+    try:
+        list1.delete(0,END)
+        for row in backend.search(title_text.get(),director_text.get(),year_text.get(),genre_text.get()):
+            list1.insert(END,row)
+    except:
+        messagebox.showerror("Error", "Search Related Error Came")                
 
 def add_command():
-    backend.insert(title_text.get(),year_text.get(),director_text.get(),review_text.get(),genre_text.get())
-    list1.delete(0,END)
+    try:
+        backend.insert(title_text.get(),year_text.get(),director_text.get(),review_text.get(),genre_text.get())
+        list1.delete(0,END)
+    except:
+        messagebox.showerror("Error", "Insertion Related Error Came")     
 
 def update_command():
-    backend.delete(selected_tuple[0],selected_tuple[1],selected_tuple[2],selected_tuple[3],selected_tuple[4],selected_tuple[5])
-    print(selected_tuple[0],selected_tuple[1],selected_tuple[2],selected_tuple[3],selected_tuple[4],selected_tuple[5])
+    try:
+        backend.delete(selected_tuple[0])
+        print(selected_tuple[0],selected_tuple[1],selected_tuple[2],selected_tuple[3],selected_tuple[4],selected_tuple[5])
+    except:
+        messagebox.showerror("Error", "Update Related Error Came")         
 def delete_command():
-    backend.delete(selected_tuple[0])
+    try:
+        backend.delete(selected_tuple[0])
+    except:
+        messagebox.showerror("Error", "Delete Related Error Came")         
 def close_command():
 	window.destroy()
 
@@ -47,67 +63,79 @@ def close_command():
 
 window = Tk()
 window.wm_title("FilmLog")
-l1=Label(window,text="Title")
-l1.grid(row= 0, column=0)
+window.config(bg="#141414")
+window.geometry("654x600")
+window.maxsize(654,650)
+window.minsize(654,650)
 
-l2=Label(window,text="Year")
-l2.grid(row= 1, column=0)
+frame = Frame(window)
+frame.place(x=0,y=230)
 
-l3=Label(window,text="Director")
-l3.grid(row= 0, column=3)
+Label(window, text="FilmLog", font=("Arial", 20, "bold", "italic"), bg="#141414", fg="orange").place(x=250, y=7)
 
-l5=Label(window,text='Genre')
-l5.grid(row=0,column=5)
+l1=Label(window,text="Title", font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l1.place(x=10,y=10+50)
 
-l4=Label(window,text="Review")
-l4.grid(row= 1, column=3)
+l2=Label(window,text="Year", font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l2.place(x=10,y=60+50)
+
+l3=Label(window,text="Director", font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l3.place(x=320,y=10+50)
+
+l4=Label(window,text="Review", font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l4.place(x=320, y=65+50)
+
+l5=Label(window,text='Genre', font=("Arial", 12, "bold"), fg="#00FF00", bg="#141414")
+l5.place(x=160, y=120+50)
 
 title_text= StringVar()
-e1=Entry(window,textvariable=title_text)
-e1.grid(row=0,column=1)
+e1=Entry(window,textvariable=title_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e1.place(x=60, y=10+50)
 
 year_text= StringVar()
-e2=Entry(window,textvariable=year_text)
-e2.grid(row=1,column=1)
+e2=Entry(window,textvariable=year_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e2.place(x=60,y=60+50)
 
 director_text= StringVar()
-e3=Entry(window,textvariable=director_text)
-e3.grid(row=0,column=4)
+e3=Entry(window,textvariable=director_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e3.place(x=320+80,y=10+50)
 
 review_text= StringVar()
-e4=Entry(window,textvariable=review_text)
-e4.grid(row=1,column=4)
+e4=Entry(window,textvariable=review_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e4.place(x=320+80, y=60+50)
 
 genre_text= StringVar()
-e5=Entry(window,textvariable=genre_text)
-e5.grid(row=0,column=6)
+e5=Entry(window,textvariable=genre_text, font=("Arial",15,"bold"), relief=SUNKEN, bd=3, bg="#3d3d3d", fg="gold", insertbackground="gold")
+e5.place(x=230, y=120+50)
 
-list1= Listbox(window,height=13,width=35)
-list1.grid(row=2,column=0,rowspan=6,columnspan=6)
+e1.focus()
 
-sb1=Scrollbar(window)
-sb1.grid(row=2,column=4)
+list1= Listbox(frame,height=13,width=89, relief=RIDGE, bd=5, bg="#ffffff", fg="blue", font=("Arial",10,"bold"))
+list1.pack(side=LEFT)
+
+sb1=Scrollbar(frame)
+sb1.pack(fill=Y,side=RIGHT)
 list1.configure(yscrollcommand=sb1.set)
 sb1.configure(command=list1.yview)
 
 list1.bind('<<ListboxSelect>>',get_selected_row)
 
-b1=Button(window,text="View All",width=12,bg='grey',command=view_command)
-b1.grid(row=2,column=5)
+b1=Button(window,text="View All", font=("Arial", 15, "bold"), width=12,bg='#262626',fg="orange",command=view_command)
+b1.place(x=10, y=500)
 
-b2=Button(window,text="Search a Film",width=12,bg='grey',command=search_command)
-b2.grid(row=3,column=5)
+b2=Button(window,text="Search a Film", font=("Arial", 15, "bold"), width=12,bg='#262626',fg="orange",command=search_command)
+b2.place(x=10, y=580)
 
-b3=Button(window,text="Add a Film",width=12,bg='grey',command=add_command)
-b3.grid(row=4,column=5)
+b3=Button(window,text="Add a Film",font=("Arial", 15, "bold"), width=14, bg='#262626',fg="orange",command=add_command)
+b3.place(x=230, y=500)
 
-b4=Button(window,text="Update Selected",width=12,bg='grey',command=update_command)
-b4.grid(row=5,column=5)
+b4=Button(window,text="Update Selected",font=("Arial", 15, "bold"), bg='#262626',fg="orange",command=update_command)
+b4.place(x=233, y=580)
 
-b5=Button(window,text="Delete Selected",width=12,bg='grey',command=delete_command)
-b5.grid(row=6,column=5)
+b5=Button(window,text="Delete Selected",font=("Arial", 15, "bold"), bg='#262626',fg="orange",command=delete_command)
+b5.place(x=480, y=500)
 
-b6=Button(window,text="Close",width=12,bg='grey',command=close_command)
-b6.grid(row=7,column=5)
+b6=Button(window,text="Close",font=("Arial", 15, "bold"), width=12, bg='#262626',fg="orange",command=close_command)
+b6.place(x=485, y=580)
 
 window.mainloop()
